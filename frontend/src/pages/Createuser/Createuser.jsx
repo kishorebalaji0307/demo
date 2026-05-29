@@ -1,5 +1,5 @@
 import { useState } from "react";
-import axios from "axios";
+import api from "../../api";
 import './createuser.css'
 
 export default function Createuser() {
@@ -12,7 +12,7 @@ export default function Createuser() {
         e.preventDefault();
 
         try {
-            const response = await axios.post( `${import.meta.env.VITE_BACKEND_URL}api/users/register`,
+            const response = await api.post( "api/users/register",
                 {name,
                     email,
                     password,

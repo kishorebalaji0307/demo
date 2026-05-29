@@ -1,5 +1,5 @@
 import { useState } from "react";
-import axios from "axios";
+import api from "../../api";
 import { useParams } from "react-router-dom";
 import './Editeuser.css'
 
@@ -14,9 +14,9 @@ export default function Edituser() {
 
     try {
 
-      const response = await axios.put(
+      const response = await api.put(
 
-        `${import.meta.env.VITE_BACKEND_URL}api/users/update-user/${id}`,
+        `api/users/update-user/${id}`,
 
         {
           allowedPages: allowedPages.split(",")

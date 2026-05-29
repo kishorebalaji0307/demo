@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+import api from "../../api";
 import { useNavigate } from "react-router-dom";
 import "./AdminDashboard.css";
 
@@ -12,8 +12,8 @@ export default function AdminDashboard() {
 
     try {
 
-      const response = await axios.get(
-        `${import.meta.env.VITE_BACKEND_URL}api/users/users`
+      const response = await api.get(
+        "api/users/users"
       );
 
       setUsers(response.data);

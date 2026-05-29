@@ -1,5 +1,5 @@
 import { useState } from "react";
-import axios from "axios";
+import api from "../../api";
 import './Login.css'
 
 
@@ -13,8 +13,8 @@ export default function Login() {
 
         try {
 
-            const response = await axios.post(
-                `${import.meta.env.VITE_BACKEND_URL}api/users/login`,
+            const response = await api.post(
+                "api/users/login",
 
                 {
                     email,
